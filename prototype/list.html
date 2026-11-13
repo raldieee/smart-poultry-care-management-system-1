@@ -1,15 +1,18 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flock Management</title>
+    <title>Flock Records | Smart Poultry Care</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
 
     <header>
         <h1>Smart Poultry Care Management System</h1>
+
         <nav>
             <a href="form.html">Add New Flock</a>
             <a href="list.html">Flock Records</a>
@@ -17,59 +20,110 @@
     </header>
 
     <main>
+
         <h2>Flock Records</h2>
         <p>Manage and monitor your poultry flock information.</p>
 
-        <a href="form.html" class="btn">+ Add New Flock</a>
+        <div class="form-actions">
+            <a href="form.html" class="btn btn-primary">
+                + Add New Flock
+            </a>
+        </div>
 
-        <div class="table-container">
-            <table>
+        <br>
+
+        <div class="form-group">
+            <label for="search">Search Flock</label>
+            <input
+                type="search"
+                id="search"
+                placeholder="Search flock name or breed...">
+        </div>
+
+        <section class="table-container">
+
+            <table id="flockTable">
+
                 <thead>
                     <tr>
                         <th>Flock ID</th>
+                        <th>Farm ID</th>
                         <th>Flock Name</th>
                         <th>Breed</th>
                         <th>Date Started</th>
                         <th>Initial Count</th>
                         <th>Status</th>
-                        <th>Action</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr>
                         <td>1</td>
+                        <td>1</td>
                         <td>Layer Flock A</td>
                         <td>White Leghorn</td>
                         <td>2026-01-15</td>
                         <td>120</td>
-                        <td>Active</td>
                         <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <span class="status status-active">
+                                ACTIVE
+                            </span>
                         </td>
                     </tr>
 
                     <tr>
                         <td>2</td>
+                        <td>1</td>
                         <td>Layer Flock B</td>
                         <td>Rhode Island Red</td>
                         <td>2026-02-01</td>
                         <td>80</td>
-                        <td>Active</td>
                         <td>
-                            <button>Edit</button>
-                            <button>Delete</button>
+                            <span class="status status-active">
+                                ACTIVE
+                            </span>
                         </td>
                     </tr>
                 </tbody>
+
             </table>
-        </div>
+
+            <p id="noResults" style="display:none; margin-top:15px;">
+                No matching flock records found.
+            </p>
+
+        </section>
+
     </main>
 
     <footer>
         <p>Smart Poultry Care Management System &copy; 2026</p>
     </footer>
+
+    <script>
+        const searchInput = document.getElementById("search");
+        const tableRows = document.querySelectorAll("#flockTable tbody tr");
+        const noResults = document.getElementById("noResults");
+
+        searchInput.addEventListener("input", function() {
+            const searchValue = this.value.toLowerCase();
+            let visibleCount = 0;
+
+            tableRows.forEach(function(row) {
+                const rowText = row.textContent.toLowerCase();
+
+                if (rowText.includes(searchValue)) {
+                    row.style.display = "";
+                    visibleCount++;
+                } else {
+                    row.style.display = "none";
+                }
+            });
+
+            noResults.style.display =
+                visibleCount === 0 ? "block" : "none";
+        });
+    </script>
 
 </body>
 </html>
