@@ -1,1 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flock Management</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
 
+    <header>
+        <h1>Smart Poultry Care Management System</h1>
+        <nav>
+            <a href="form.html">Add New Flock</a>
+            <a href="list.html">Flock Records</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Flock Records</h2>
+        <p>Manage and monitor your poultry flock information.</p>
+
+        <a href="form.html" class="btn">+ Add New Flock</a>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Flock ID</th>
+                        <th>Flock Name</th>
+                        <th>Breed</th>
+                        <th>Date Started</th>
+                        <th>Initial Count</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Layer Flock A</td>
+                        <td>White Leghorn</td>
+                        <td>2026-01-15</td>
+                        <td>120</td>
+                        <td>Active</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Layer Flock B</td>
+                        <td>Rhode Island Red</td>
+                        <td>2026-02-01</td>
+                        <td>80</td>
+                        <td>Active</td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>Smart Poultry Care Management System &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
