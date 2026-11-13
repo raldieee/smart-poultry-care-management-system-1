@@ -1,1 +1,128 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Flock | Smart Poultry Care</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Smart Poultry Care Management System</h1>
+
+        <nav>
+            <a href="form.html">Add New Flock</a>
+            <a href="list.html">Flock Records</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <h2>Add New Flock</h2>
+        <p>Enter the poultry flock information below.</p>
+
+        <section class="form-container">
+
+            <form id="flockForm">
+
+                <div class="form-group">
+                    <label for="farm_id">Farm ID</label>
+                    <input
+                        type="number"
+                        id="farm_id"
+                        name="farm_id"
+                        min="1"
+                        placeholder="Enter farm ID"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="flock_name">Flock Name</label>
+                    <input
+                        type="text"
+                        id="flock_name"
+                        name="flock_name"
+                        maxlength="100"
+                        placeholder="Example: Layer Flock C"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="breed">Chicken Breed</label>
+                    <select id="breed" name="breed" required>
+                        <option value="">Select breed</option>
+                        <option value="White Leghorn">White Leghorn</option>
+                        <option value="Rhode Island Red">Rhode Island Red</option>
+                        <option value="Plymouth Rock">Plymouth Rock</option>
+                        <option value="Broiler">Broiler</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_started">Date Started</label>
+                    <input
+                        type="date"
+                        id="date_started"
+                        name="date_started"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="initial_count">Initial Chicken Count</label>
+                    <input
+                        type="number"
+                        id="initial_count"
+                        name="initial_count"
+                        min="1"
+                        placeholder="Enter number of chickens"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Flock Status</label>
+                    <select id="status" name="status" required>
+                        <option value="ACTIVE">Active</option>
+                        <option value="INACTIVE">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        Save Flock
+                    </button>
+
+                    <button type="reset" class="btn-secondary">
+                        Clear Form
+                    </button>
+
+                    <a href="list.html" class="btn-secondary">
+                        Back to Records
+                    </a>
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Smart Poultry Care Management System &copy; 2026</p>
+    </footer>
+
+    <script>
+        document.getElementById("flockForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            alert("Flock information submitted successfully! (Prototype only)");
+        });
+    </script>
+
+</body>
+</html>
+
+
